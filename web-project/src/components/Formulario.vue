@@ -4,25 +4,25 @@
             <div class="row">
                 <div class="col-md-12 form-group">
                 <label for="cedula">Cedula:</label>
-                <input type="text" id="cedula" required />
+                <input type="text" id="cedula" v-model="persona.cedula" required />
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" required />
+                <input type="text" id="nombre" v-model="persona.nombre" required />
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 form-group">
                 <label for="correo">Correo:</label>
-                <input type="email" id="email" required />
+                <input type="email" id="email" v-model="persona.email" required />
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 form-group">
                 <label for="edad">Edad:</label>
-                <input type="number" id="edad" required />
+                <input type="number" id="edad" v-model="persona.edad"/>
                 </div>
             </div>
             <button type="submit">Enviar</button>
@@ -37,20 +37,9 @@ import Paciente from '../models/Persona'
 
 export default{
     name: 'formularioRegistro',
-    validations: {
-        edad: {
-            number: true, max: 90
-        }
-    },
     data(){
         return {
         url: Global.url,
-        /*user: {
-            cedula: '',
-            nombre: '',
-            email: '',
-            edad: ''
-            }*/
         persona: new Paciente('','','','')
         }
     },
@@ -61,7 +50,7 @@ export default{
         handleSubmit(){
             console.log(this.persona)
 
-            axios.post(this.url+'save',this.user)
+            axios.post(this.url+'save/'+this.persona)
                 .then(response => {
                     console.log(response.data);
                 })
