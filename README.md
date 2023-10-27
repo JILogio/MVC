@@ -9,6 +9,7 @@ servidor
 
 ## Arquitectura del framework
 ![](https://bezkoder.com/wp-content/uploads/2020/02/vue-node-express-mongodb-crud-mean-stack-architecture.png)
+ 
  Node.js es un entorno de tiempo de ejecución de JavaScript que permite a los desarrolladores crear aplicaciones del lado del servidor altamente eficientes y escalables.
  Express.js es un framework web minimalista para Node.js que simplifica el desarrollo de aplicaciones web al proporcionar una serie de herramientas y middleware para manejar rutas,
  solicitudes y respuestas. Vue.js, por otro lado, es un marco de trabajo de JavaScript en el lado del cliente que facilita la creación de interfaces de usuario interactivas y reactivas.
